@@ -1,0 +1,162 @@
+%%%%% sample.bib %%%%%
+%英語で書かれている参考文献を書く時用に作ったbibfileです。
+%論文自体を日本語で書く場合であっても, 英語の文献と分けておいた方が無難かと思います
+%といっても、日本語用とそう変わりがありませんが。
+%参考URL：
+%http://yamamo10.jp/yamamoto/comp/latex/bibtex/bibtex.html
+%以下, サンプルに色々とリストに書いてありますが、論文中で参照しないものは論文に表示されないので、
+%使わないものをわざわざ削除する必要はありません。
+%論文本体を英語で書く場合は, 日本語の参考文献は入らないと思いますので
+%pbibtexではなく、bibtexで処理をしたあと, platexではなくlatexを2回処理してください。
+%Last Update 2021/2/26
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%% misc %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%その他（ネット上のページなど）
+%必須フィールドはないはずなのですが, リストを順番に並べるために,
+%authorかkeyの入力しないとエラーになってしまいます.
+%そのため, authorがわかっている場合はauthorを。わからない場合は, 適当なkeyを追加してください.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@misc{google,
+	title="google",
+	key="google",
+	howpublished = "\url{https://www.google.com/}",
+}
+
+
+%%%%% book %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%出版が明確な本
+%	必須フィールド -- (author または editor), title, publisher
+%	任意フィールド -- (volume または number), adress, edition, month, note, series
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@book{red:2003,
+	author	= "Fernand Vega-Redondo",
+	title	= "Economics and the Theory of Games",
+	publisher = "Cambridge University Press",
+	year	= "2003",
+	address = "Cambridge"
+}
+
+@book{mye:1991,
+	author	= "Roger B. Myerson",
+	title	= "Game Theory: Analysis of Conflict",
+	address = "Cambridge",
+	publisher = "Harvard University Press",
+	year	= "1991"
+}
+
+%%%%% inbook %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%章などの本の一部分. ただし章にタイトルを持っていない場合に使う
+%	必須フィールド -- (author または editor) (chapter または pages 両方指定も可), publisher, title, year
+%	任意フィールド -- (volume または number), address, edition, month, note, series, type
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@inbook{mas:1995,
+	author	= "Andreu Mas-Corell and Michael Winston and Jerry Green",
+	title	= "Microeconomic Theory",
+	year	= "1995",
+	address	= "Oxford",
+	publisher= "Oxford University Press",
+	chapter	= "13,14",
+	pages	= "436--510"
+}
+
+%%%%% booklet %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%出版社がわからない本
+%	必須フィールド -- title
+%	任意フィールド -- address, author, howpublished, month, not, year
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@booklet{example,
+	title	=	"no published ",
+	year 	=	"2003"
+}
+
+%%%%% incollection %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%incollection(本の一部分で章にタイトルがある場合)
+%	必須フィールド -- author, booktitle, publisher, title, , year
+%	任意フィールド -- (volume または number), address, chapter, edition, editor, month, note, pages, series, type
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@incollection{mas:1985,
+	author	= "Eric Maskin",
+	title	= "The Theory of Implementation in Nash Equilibrium: A Survey",
+	booktitle = "Social Goals And Social Organization",
+	editor	= "Leonid Hurwicz and David Schmeidler and Hugo Sonnenschein",
+	year	= "1985",
+	address = "Cambridge",
+	publisher ="Cambridge Unviersity Press",
+	pages	="173--204"
+}
+
+%%%%% article %%%%%%%%%%%%%%%%%%%%%%%%%
+%論文用
+%	必須フィールド -- author, journal, title, year
+%	任意フィールド -- month, note, number, pages, volume
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@article{Lomax2020,
+	author	= "Paulo H. Ferreira and Eduardo Ramos and Pedro L. Ramos and Jhon F.B. Gonzales and Vera L.D. Tomazella and Ricardo S. Ehlers and Eveliny B. Silva and Francisco Louzada",
+	title 	= "Objective Bayesian analysis for the Lomax distribution",
+	journal	= "Statistics and Probability Letters",
+	year	= "2019",
+}
+
+
+@article{mye:1981,
+	author	= "Roger B. Myerson",
+	title 	= "Optimal Auction Design",
+	journal	= "Mathematics of Operations Research",
+	year	= "1981",
+	volume	= "6",
+	number	= "1",
+	month	= "feb",
+	pages	= "58--73"
+}
+
+@article{das:1979,
+	author	= "Partha Dasgupta and Peter Hammond and Eric Maskin",
+	title	= "The Implemntation of Social Choice Rules: Some General Results on Incentive Compatibility",
+	journal	= "Review of Economic Studies",
+	year	= "1979",
+	volume	= "46",
+	pages	="185--216"
+}
+
+@article{sjo:1996b,
+	author	= "Tomas Sj{\"o}str{\"o}m",
+	title	= "Implementation by Demand Mechanisms",
+	journal = "Economic Design",
+	year	= "1996",
+	volume	="1",
+	pages	="343--354"
+}
+
+%%%%% inproceedings %%%%%%%%%%%%%%%%%%%
+%研究録や国際会議の論文参照に使う
+%    必須フィールド -- author, booktitle, title, year
+%    任意フィールド -- (volume または number), address, editor, month, note, organization, pages, publisher, series
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@inproceedings{Du3,
+	author = {D. Duverney and I. Shiokawa},
+	booktitle = {Diophantine Analysis and Related Fields},
+	title = {On series involving {Fibonacci} and {Lucas} numbers {I}},
+	organization ={American Institute of Physics},
+	year={2008},
+	pages = {62--76}
+}
+
+@inproceedings{Law,
+	author = {N. D. Lawrence and A. I. T. Rowstron and C. M. Bishop and M. J. Taylor},
+	booktitle = {Advances in Neural Information Processing Systems},
+	volume = {14},
+	title = {Optimising synchronisation times for mobile devices},
+	editor ={T. G. Dietterich and S. Becker and Z. Chahramani},
+	year={2002},
+	pages = {1401--1408},
+	publisher = {MIT Press}
+}

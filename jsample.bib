@@ -1,0 +1,150 @@
+%%%%% jsample.bib %%%%%
+%こちらのファイルは日本語の参考文献を書く場合に使うとよいです.
+%文章自体は日本語であっても、英語の参考文献を入れる場合はもう一つのファイルに書き込むとよいです
+%参考URL：
+%http://www.yamamo10.jp/yamamoto/comp/latex/bibtex/bibtex.html
+%以下, サンプルに色々とリストに書いてありますが、論文中で参照しないものは論文に表示されないので、
+%使わないものをわざわざ削除する必要はありません。
+%日本語で書く場合は, pbibtexで処理をしたあと, platexを2回処理してください。
+%Last Update 2021/2/26
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% misc %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%その他（ネット上のページなど）
+%必須フィールドはないはずなのですが, リストを順番に並べるために, 
+%authorかkeyの入力しないとエラーになってしまいます. 
+%そのため, authorがわかっている場合はauthorを。わからない場合は, 適当なkeyを追加してください. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@misc{mi,
+	author = "mixi",
+	key = "mixi",
+	howpublished = "\url{http://mixi.jp/}"
+}
+
+%%%%% book %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%出版社が明確な本 
+%	必須フィールド -- (author または editor), title, publisher
+%	任意フィールド -- (volume または number), adress, edition, month, note, series
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@book{wakui,
+	author	= "涌井 良幸",
+	yomi	= "わくいよしゆき",
+	title	= "道具としてのベイズ統計",
+	year	= "2009",
+	publisher ="日本実業出版社"
+}
+
+@book{miz2003,
+	author	= "水島 茂樹",
+	yomi	= "みずしましげき",
+	title	= "$<$解放$>$の果てに - 個人の変容と近代の行方",
+	year	= "2003",
+	publisher ="ナカニシヤ出版"
+}
+
+@book{oku1985a,
+	author	= "奥野 正寛 and 鈴村 興太郎",
+	yomi	= "おくのまさひろ",
+	title	= "ミクロ経済学 I",
+	year	= "1985",
+	series  = "モダン・エコノミックス",
+	volume	= "1",
+	publisher="岩波書店"
+}
+
+
+
+%%%%% inbook %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%章などの本の一部分. ただし章にタイトルを持っていない場合に使う
+%	必須フィールド -- (author または editor) (chapter または pages 両方指定も可), publisher, title, year
+%	任意フィールド -- (volume または number), address, edition, month, note, series, type
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@inbook{ito2003,
+	editor	= "伊藤 秀史 and 小佐野 広",
+	yomi	= "いとうひでし",
+	title	= "組織における権限配分とモニタリング", 
+	booktitle = "インセンティブ設計の経済学 - 契約理論の応用分析",
+	chapter	= "4",
+	pages	= "75--105",
+	year	= "2003",
+	publisher = "勁草書房"
+}
+
+%%%%% booklet %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%出版社がわからない本
+%	必須フィールド -- title
+%	任意フィールド -- address, author, howpublished, month, not, year
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@booklet{example2,
+	title="no published ",
+	year = "2003"
+}
+
+%%%%% incollection %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%incollection(本の一部分で章にタイトルがある場合)
+%	必須フィールド -- author, booktitle, publisher, title, , year
+%	任意フィールド -- (volume または number), address, chapter, edition, editor, month, note, pages, series, type
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@incollection{mas:1,
+   		author	= "永田 靖 and 棟近 雅彦",
+   		yomi = "ながた",
+    	title	= "重回帰分析",
+    	booktitle = "多変量解析法入門",
+    	year	= "2010",
+    	publisher ="サイエンス社",
+    	chapter="5",
+    	pages	="78--81"
+}
+
+@incollection{ito2004,
+	author	= "伊藤 秀史",
+	yomi	= "いとうひでし",
+	title	= "インセンティブ設計と社会的選好",
+	booktitle = "現代経済学の潮流",
+	editor	= "岩田 規久男 and 岩本 康志 and 本多 佑三 and 松井 彰彦",
+	pages	= "29--52",
+	publisher = "東洋経済新報社",
+	year="2004"
+}
+
+
+%%%%% article %%%%%%%%%%%%%%%%%%%%%%%%%
+%論文用
+%	必須フィールド -- author, journal, title, year
+%	任意フィールド -- month, note, number, pages, volume
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@article{oka1989,
+	author	= "岡田 章",
+	yomi	= "おかだあきら",
+	title	= "非協力ゲーム理論の最近の展開",
+	journal	= "オペレーションズ・リサーチ",
+	volume	= "34",
+	number	= "11",
+	year	="1989"
+}
+
+%%%%% inproceedings %%%%%%%%%%%%%%%%%%%
+%研究録や国際会議の論文参照に使う
+%    必須フィールド -- author, booktitle, title, year
+%    任意フィールド -- (volume または number), address, editor, month, note, organization, pages, publisher, series
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@inproceedings{2008_3_EN,
+	author = "西松 研 and 黒沢 健 and 下川 信祐",
+	booktitle = "2008総合大会講演論文集",
+	yomi = {にしまつけん},
+	title =   "ユーザのブロードバンド回線選択と地域性に関する分析", 
+	organization = "電子情報通信学会",
+	year =   "2008",
+	month = "Mar.",
+	series = "B-7-7",
+	pages ="84"
+}
+
+
+
+
